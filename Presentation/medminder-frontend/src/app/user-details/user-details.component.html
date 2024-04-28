@@ -1,0 +1,27 @@
+<h2 mat-dialog-title>User Details</h2>
+<div mat-dialog-content>
+  <form [formGroup]="userDetailsForm" (ngSubmit)="onSubmit()">
+    <mat-form-field>
+        <mat-label>First Name</mat-label>
+      <input matInput formControlName="firstName" placeholder="First Name">
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput formControlName="lastName" placeholder="Last Name">
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput formControlName="city" placeholder="City">
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Active</mat-label>
+      <mat-select formControlName="active">
+        <mat-option value="true">Yes</mat-option>
+        <mat-option value="false">No</mat-option>
+      </mat-select>
+    </mat-form-field>
+  </form>
+</div>
+<div mat-dialog-actions>
+  <button mat-raised-button color="primary" (click)="onCancel()">Cancel</button>
+  <button mat-raised-button color="primary" (click)="onSubmit()">Save</button>
+  <button mat-raised-button color="primary" (click)="onDelete()" [disabled]="isDisabled">Delete</button>
+</div>
